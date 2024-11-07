@@ -13,6 +13,11 @@
     <time></time>
     <script>
       (() => {
+        const updateTime = (el) => {
+          const date = new Date();
+          el.textContent = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+        };
+
         document.addEventListener("DOMContentLoaded", (event) => {
           const timeElement = document.querySelector("time");
 
@@ -21,8 +26,8 @@
             return;
           }
 
-          const date = new Date();
-          timeElement.textContent = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+          updateTime(timeElement);
+          setInterval(() => updateTime(timeElement), 1000);
         });
       })();
     </script>
