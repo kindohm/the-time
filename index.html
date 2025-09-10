@@ -2,114 +2,34 @@
 <html lang="en-us">
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
-      crossorigin="anonymous"
-    />
+    <style>
+      body {
+        font-family: sans-serif;
+        font-size: 4rem;
+      }
+    </style>
   </head>
   <body>
-    <main class="container">
-      <p>Confusing team name decoder ring</p>
-      <table class="table table-sm">
-        <thead>
-          <tr>
-            <th>Codename</th>
-            <th>Meaning</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Apollo</td>
-            <td>DEME "Core"</td>
-          </tr>
-          <tr>
-            <td>Benjamins</td>
-            <td>DCX mutual funds</td>
-          </tr>
-          <tr>
-            <td>Bigfoot</td>
-            <td>EIS Bill Pay Transactions</td>
-          </tr>
-          <tr>
-            <td>Data Surfers</td>
-            <td>EIS client</td>
-          </tr>
-          <tr>
-            <td>Engagement</td>
-            <td>DCX Front End</td>
-          </tr>
-          <tr>
-            <td>Firebirds</td>
-            <td>???</td>
-          </tr>
-          <tr>
-            <td>The Force</td>
-            <td>???</td>
-          </tr>
-          <tr>
-            <td>Gatekeepers</td>
-            <td>DEME ?</td>
-          </tr>
-          <tr>
-            <td>Interstellars</td>
-            <td>EIS generosity, interactions, digital identity</td>
-          </tr>
-          <tr>
-            <td>Mission Integrators</td>
-            <td>EIS Advice / Advisor</td>
-          </tr>
-          <tr>
-            <td>Money Movers</td>
-            <td>DCX bill pay</td>
-          </tr>
-          <tr>
-            <td>Newsies</td>
-            <td>DCX Client communication; message center</td>
-          </tr>
-          <tr>
-            <td>Omegastar</td>
-            <td>???</td>
-          </tr>
-          <tr>
-            <td>Planeteers</td>
-            <td>EIS life, health, annuity data</td>
-          </tr>
-          <tr>
-            <td>Plumbers</td>
-            <td>EIS platform (kafka, rabbitmq, API gateways)</td>
-          </tr>
-          <tr>
-            <td>Poseidon</td>
-            <td>DEME "Core"</td>
-          </tr>
-          <tr>
-            <td>Profilers</td>
-            <td>???</td>
-          </tr>
-          <tr>
-            <td>Regulators</td>
-            <td>?</td>
-          </tr>
-          <tr>
-            <td>Shebangs</td>
-            <td>EIS Mutual Funds, Brokerage</td>
-          </tr>
-          <tr>
-            <td>Strikeforce</td>
-            <td>?</td>
-          </tr>
-          <tr>
-            <td>Tigers</td>
-            <td>EIS TEID hydration</td>
-          </tr>
-          <tr>
-            <td>Wealth</td>
-            <td>DCX Front End</td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
+    <time></time>
+    <script>
+      (() => {
+        const updateTime = (el) => {
+          const date = new Date();
+          el.textContent = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+        };
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+          const timeElement = document.querySelector("time");
+
+          if (!timeElement) {
+            console.warn("no time element");
+            return;
+          }
+
+          updateTime(timeElement);
+          setInterval(() => updateTime(timeElement), 1000);
+        });
+      })();
+    </script>
   </body>
 </html>
